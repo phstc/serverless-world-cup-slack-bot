@@ -1,0 +1,58 @@
+service: serverless-world-cup
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    HISTORY_TABLE: history
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+      Resource:
+        - Fn::GetAtt:
+          - historyTable
+          - Arn
+        - Fn::Join:
+          - ""
+          - - Fn::GetAtt:
+              - historyTable
+              - Arn
+            - "/index/*"
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - schedule:
+          rate: rate(1 minute)
+          enabled: true
+resources:
+  Resources:
+    historyTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.HISTORY_TABLE}
+        SSESpecification:
+          SSEEnabled: true
+        AttributeDefinitions:
+          - AttributeName: date
+            AttributeType: S
+        KeySchema:
+          - AttributeName: date
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+custom:
+  dotenv:
+    include:
+      - SLACK_TOKEN
+      - SLACK_CHANNEL
+  webpack:
+    packager: yarn
+    includeModules: true
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-webpack
+  - serverless-dynamodb-local
