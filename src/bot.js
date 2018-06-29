@@ -11,10 +11,7 @@ const postMessage = async text => {
     channel: SLACK_CHANNEL,
     text,
     username: SLACK_BOT_NAME,
-    unfurl_links: true,
-    parse: 'full',
-    pretty: true,
-    mrkdwn: true
+    parse: 'full'
   })
 }
 
