@@ -1,3 +1,5 @@
+### WorldCup Bot
+
 Meet WorldCup Bot, a dirty simple bot for posting to Slack 2018 FIFA World Cup Russia™ matches events.
 
 WorldCup Bot will post:
