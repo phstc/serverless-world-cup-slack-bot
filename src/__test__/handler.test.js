@@ -15,11 +15,13 @@ beforeEach(() => {
 })
 
 test('no matches today', async () => {
+  msgs = [':sleeping: there are no matches today']
   processMatches.mockImplementation(() => [])
+  processMsgs.mockImplementation(() => msgs)
 
   await handler.matches()
 
-  expect(postMessage).toBeCalledWith(':sleeping: there are no matches today')
+  expect(postMessage).toBeCalledWith(msgs[0])
 })
 
 test('new messages', async () => {

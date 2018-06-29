@@ -3,10 +3,10 @@ const processMatches = require('./matches')
 const processMsgs = require('./history')
 
 module.exports.matches = async (event, context) => {
-  const msgs = await processMatches()
+  let msgs = await processMatches()
 
   if (msgs.length === 0) {
-    return await postMessage(':sleeping: there are no matches today')
+    msgs = [':sleeping: there are no matches today']
   }
 
   const uniqueMsgs = await processMsgs(msgs)
