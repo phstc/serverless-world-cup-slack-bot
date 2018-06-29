@@ -18,6 +18,17 @@ const getMatches = async () => {
       datetime: timeFromNow(5).toISOString(),
       home_team_country: 'Brazil',
       away_team_country: 'Croatia'
+    },
+    {
+      status: 'completed',
+      home_team: {
+        country: 'Brazil',
+        goals: 1
+      },
+      away_team: {
+        country: 'Switzerland',
+        goals: 1
+      }
     }
   ]
 }

@@ -30,10 +30,6 @@ const processFutureMatch = match => {
 }
 
 const processCompletedMatch = match => {
-  if (!match.winner) {
-    return
-  }
-
   append(
     `:timer_clock: The match in between ${match.home_team.country} and ${
       match.away_team.country
