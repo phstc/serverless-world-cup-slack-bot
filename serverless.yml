@@ -1,4 +1,4 @@
-service: serverless-world-cup
+service: world-cup-bot
 
 provider:
   name: aws
