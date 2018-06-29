@@ -7,6 +7,8 @@ WorldCup Bot will post:
 * Goals
 * Yellow and red cards
 
+![](preview.png)
+
 ### Getting started
 
 Install Serverless `npm install serverless -g`.
