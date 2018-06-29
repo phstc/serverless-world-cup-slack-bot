@@ -54,7 +54,7 @@ const processMsgs = async msgs => {
     }
   })
 
-  upsertHistory(history)
+  await upsertHistory(history)
 
   return uniqueMsgs
 }
