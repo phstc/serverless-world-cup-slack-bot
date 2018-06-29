@@ -22,7 +22,7 @@ provider:
             - "/index/*"
 functions:
   hello:
-    handler: handler.hello
+    handler: src/handler.hello
     events:
       - schedule:
           rate: rate(1 minute)
