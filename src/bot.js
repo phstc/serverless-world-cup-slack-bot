@@ -13,6 +13,8 @@ const postMessage = async text => {
     username: SLACK_BOT_NAME,
     parse: 'full'
   })
+
+  return text
 }
 
 module.exports = postMessage

@@ -6,15 +6,12 @@ module.exports.matches = async (event, context) => {
   const msgs = await processMatches()
 
   if (msgs.length === 0) {
-    return ':sleeping: there are no matches today'
+    return await postMessage(':sleeping: there are no matches today')
   }
 
   const uniqueMsgs = await processMsgs(msgs)
   if (uniqueMsgs.length > 0) {
-    const joinedMsgs = uniqueMsgs.join('\n\n')
-    postMessage(joinedMsgs)
-
-    return joinedMsgs
+    return await postMessage(uniqueMsgs.join('\n\n'))
   }
 
   return 'no new events'
