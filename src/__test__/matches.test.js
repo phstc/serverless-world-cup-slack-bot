@@ -8,8 +8,11 @@ beforeAll(async () => {
   msgs = await processMatches()
 })
 
+test('number of messages ', async () => {
+  expect(msgs).toHaveLength(4)
+})
+
 test('future matches', async () => {
-  expect(msgs).toHaveLength(3)
   expect(msgs[0]).toEqual(
     ':timer_clock: The match between Brazil and Switzerland is about to start!'
   )
@@ -18,8 +21,13 @@ test('future matches', async () => {
 })
 
 test('completed matches', async () => {
-  expect(msgs).toHaveLength(3)
   expect(msgs[2]).toEqual(
     ':timer_clock: The match in between Brazil and Switzerland is over\n> Brazil 1 x Switzerland 1'
+  )
+})
+
+test('in progress matches', async () => {
+  expect(msgs[3]).toEqual(
+    ":soccer: GOOOOAL!!!\n> Philippe Coutinho (20') Brazil 1 x Switzerland 1"
   )
 })

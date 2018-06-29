@@ -29,6 +29,25 @@ const getMatches = async () => {
         country: 'Switzerland',
         goals: 1
       }
+    },
+    {
+      status: 'in progress',
+      home_team: {
+        country: 'Brazil',
+        goals: 1
+      },
+      away_team: {
+        country: 'Switzerland',
+        goals: 1
+      },
+      home_team_events: [
+        {
+          type_of_event: 'goal',
+          player: 'Philippe Coutinho',
+          time: "20'"
+        }
+      ],
+      away_team_events: []
     }
   ]
 }
