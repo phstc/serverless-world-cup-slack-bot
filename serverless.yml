@@ -21,8 +21,8 @@ provider:
               - Arn
             - "/index/*"
 functions:
-  hello:
-    handler: src/handler.hello
+  matches:
+    handler: src/handler.matches
     events:
       - schedule:
           rate: rate(1 minute)

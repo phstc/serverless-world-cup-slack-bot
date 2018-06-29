@@ -15,7 +15,7 @@ WorldCup Bot will post:
 
 Install Serverless `npm install serverless -g`.
 
-Configure your [AWS keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), [this article](https://serverless.com/framework/docs/providers/aws/guide/credentials/) shows various ways of configuring the keys. A quick dirty one is just to export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Personally, I prefer [aws-vault](https://github.com/99designs/aws-vault) for managing my keys.
+Configure your [AWS keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), [this article](https://serverless.com/framework/docs/providers/aws/guide/credentials/) shows various ways of configuring the keys. A quick simple one is just to export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Personally, I prefer [aws-vault](https://github.com/99designs/aws-vault) for managing my keys.
 
 Get a [Slack Token](https://api.slack.com/custom-integrations/legacy-tokens).
 
@@ -31,6 +31,22 @@ Deploy:
 
 ```sh
 serverless deploy
+```
+
+That's it, the WorldCup Bot will check and notify matches events every 1 minute. For changing the frequency or disabling the auto notification, check the [CloudWatch Event configuration](https://github.com/phstc/serverless-world-cup-slack-bot/blob/8ea969b5df65be1ce84d44a4544643ba4230d4b2/serverless.yml#L28-L29).
+
+#### Invoking from command-line
+
+For invoking the deployed version:
+
+```sh
+serverless invoke -f matches
+```
+
+For invoking the local version version:
+
+```sh
+serverless invoke local -f matches
 ```
 
 ### Resources

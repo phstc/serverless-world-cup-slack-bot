@@ -2,7 +2,7 @@ const postMessage = require('./bot')
 const processMatches = require('./matches')
 const processMsgs = require('./history')
 
-module.exports.hello = async (event, context) => {
+module.exports.matches = async (event, context) => {
   const msgs = await processMatches()
   const uniqueMsgs = await processMsgs(msgs)
   if (uniqueMsgs.length > 0) {
@@ -12,5 +12,5 @@ module.exports.hello = async (event, context) => {
     return joinedMsgs
   }
 
-  return 'no new messages'
+  return 'no new events'
 }
