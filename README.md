@@ -13,7 +13,7 @@ WorldCup Bot will post:
 
 ### Getting started
 
-Configure your [AWS keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html), [this article](https://serverless.com/framework/docs/providers/aws/guide/credentials/) shows various ways of configuring the keys. A quick simple one is just to export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Personally, I prefer [aws-vault](https://github.com/99designs/aws-vault) for managing my keys.
+Configure your AWS keys, [this article](https://serverless.com/framework/docs/providers/aws/guide/credentials/) shows various ways of configuring the keys. A quick simple one is just to export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Personally, I prefer [aws-vault](https://github.com/99designs/aws-vault) for managing my keys.
 
 Get a [Slack Token](https://api.slack.com/custom-integrations/legacy-tokens).
 
@@ -48,7 +48,7 @@ For invoking the deployed version:
 yarn sls invoke -f matches
 ```
 
-For invoking the local version version:
+For invoking the local version:
 
 ```sh
 yarn sls invoke local -f matches
