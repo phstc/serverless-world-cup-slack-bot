@@ -47,7 +47,13 @@ const getMatches = async () => {
           time: "20'"
         }
       ],
-      away_team_events: []
+      away_team_events: [
+        {
+          type_of_event: 'yellow-card',
+          player: 'Valon Behrami',
+          time: "68'"
+        }
+      ]
     }
   ]
 }
