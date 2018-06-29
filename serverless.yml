@@ -49,6 +49,7 @@ custom:
     include:
       - SLACK_TOKEN
       - SLACK_CHANNEL
+      - SLACK_BOT_NAME
   webpack:
     packager: yarn
     includeModules: true
