@@ -44,4 +44,4 @@ WorldCup Bot runs on [AWS](https://aws.amazon.com/) and it uses:
 
 ### Uninstall
 
-Once you are done with the bot, you can just remove the CloudFormation stack `serverless remove`.
+Once you are done with your bot, you can just remove the CloudFormation stack `serverless remove`.
