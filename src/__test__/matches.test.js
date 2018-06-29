@@ -2,9 +2,13 @@ const processMatches = require('../matches')
 
 jest.mock('../api')
 
-// TODO add more tests based on fixtures when https://worldcup.sfg.io/matches/today starts returning matches
 test('no new events', async () => {
   const msgs = await processMatches()
 
-  expect(msgs).toHaveLength(0)
+  expect(msgs).toHaveLength(2)
+  expect(msgs[0]).toEqual(
+    ':timer_clock: The match between Brazil and Switzerland is about to start!'
+  )
+  // TODO figure out the date matcher
+  expect(msgs[1]).toContain(':timer_clock: Brazil / Croatia is playing today')
 })

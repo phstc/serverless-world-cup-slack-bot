@@ -1,7 +1,25 @@
+const timeFromNow = minutes => {
+  const now = new Date()
+
+  now.setSeconds(now.getSeconds() + minutes * 60)
+  return now
+}
+
 const getMatches = async () => {
-  // Load a fixture when https://worldcup.sfg.io/matches/today starts returning matches
-  // See https://hackernoon.com/api-testing-with-jest-d1ab74005c0a
-  return []
+  return [
+    {
+      status: 'future',
+      datetime: timeFromNow(1).toISOString(),
+      home_team_country: 'Brazil',
+      away_team_country: 'Switzerland'
+    },
+    {
+      status: 'future',
+      datetime: timeFromNow(5).toISOString(),
+      home_team_country: 'Brazil',
+      away_team_country: 'Croatia'
+    }
+  ]
 }
 
 module.exports = { getMatches }

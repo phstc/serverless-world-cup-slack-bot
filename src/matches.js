@@ -18,7 +18,7 @@ const processFutureMatch = match => {
       } is about to start!`
     )
   } else {
-    const time = Date.parse(match.datetime)
+    const time = new Date(Date.parse(match.datetime))
     append(
       `:timer_clock: ${match.home_team_country} / ${
         match.away_team_country
