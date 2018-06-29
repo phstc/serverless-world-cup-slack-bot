@@ -1,10 +1,16 @@
 {
+  "scripts": {
+    "test": "jest",
+    "deploy": "serverless deploy"
+  },
   "dependencies": {
     "@slack/client": "^4.3.1",
     "aws-sdk": "^2.265.1",
     "axios": "^0.18.0"
   },
   "devDependencies": {
+    "jest": "^23.2.0",
+    "serverless": "^1.27.3",
     "serverless-dotenv-plugin": "^1.1.3",
     "serverless-dynamodb-local": "^0.2.30",
     "serverless-webpack": "^5.1.5",
