@@ -1,17 +1,9 @@
-const axios = require('axios')
+const { getMatches } = require('./api')
+
 const msgs = []
 
 const append = msg => {
   msgs.push(msg)
-}
-
-const getMatches = async () => {
-  var url = 'https://worldcup.sfg.io/matches/today'
-
-  const response = await axios.get(url)
-  const matches = response.data
-
-  return matches
 }
 
 const processFutureMatch = match => {
