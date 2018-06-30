@@ -42,6 +42,21 @@ const processCompletedMatch = match => {
 const processInProgressMatch = match => {
   processInProgressEvents(match.home_team, match, match.home_team_events)
   processInProgressEvents(match.away_team, match, match.away_team_events)
+
+  processInProgressGoals(match)
+}
+
+const processInProgressGoals = match => {
+  if (
+    (match.home_team && match.home_team.goals && match.home_team.goals) > 0 ||
+    (match.away_team && match.away_team.goals && match.away_team.goals > 0)
+  ) {
+    append(
+      `:soccer: ${match.home_team.country} ${match.home_team.goals} x ${
+        match.away_team.country
+      } ${match.away_team.goals}`
+    )
+  }
 }
 
 const processInProgressEvents = (team, match, events) => {
@@ -51,8 +66,6 @@ const processInProgressEvents = (team, match, events) => {
         append(
           `:soccer: GOOOOAL!!!\n> ${event.player} (${event.time}) ${
             match.home_team.country
-          } ${match.home_team.goals} x ${match.away_team.country} ${
-            match.away_team.goals
           }`
         )
         break
@@ -60,8 +73,6 @@ const processInProgressEvents = (team, match, events) => {
         append(
           `:soccer: GOOOOAL penalty!!!\n> ${event.player} (${event.time}) ${
             match.home_team.country
-          } ${match.home_team.goals} x ${match.away_team.country} ${
-            match.away_team.goals
           }`
         )
         break
