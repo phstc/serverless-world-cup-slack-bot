@@ -52,6 +52,16 @@ const getMatches = async () => {
           type_of_event: 'yellow-card',
           player: 'Valon Behrami',
           time: "68'"
+        },
+        {
+          type_of_event: 'red-card',
+          player: 'Fake Player',
+          time: "90'"
+        },
+        {
+          type_of_event: 'goal-penalty',
+          player: 'Fake Player',
+          time: "90'"
         }
       ]
     }

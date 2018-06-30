@@ -9,7 +9,7 @@ beforeAll(async () => {
 })
 
 test('number of messages ', async () => {
-  expect(msgs).toHaveLength(5)
+  expect(msgs).toHaveLength(7)
 })
 
 test('future matches', async () => {
@@ -32,5 +32,11 @@ test('in progress matches', async () => {
   )
   expect(msgs[4]).toEqual(
     ":warning: Yellow card!!!\n> Valon Behrami (68') Switzerland"
+  )
+  expect(msgs[5]).toEqual(
+    ":exclamation: Red card!!!\n> Fake Player (90') Switzerland"
+  )
+  expect(msgs[6]).toEqual(
+    ":soccer: GOOOOAL penalty!!!\n> Fake Player (90') Brazil 1 x Switzerland 1"
   )
 })
