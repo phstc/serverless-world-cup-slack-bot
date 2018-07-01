@@ -37,7 +37,7 @@ test('in progress matches', async () => {
     ":exclamation: Red card!!!\n> Fake Player (90') Switzerland"
   )
   expect(msgs[6]).toEqual(
-    ":soccer: GOOOOAL penalty!!!\n> Fake Player (90') Brazil"
+    ":soccer: GOOOOAL penalty!!!\n> Fake Player (90') Switzerland"
   )
   expect(msgs[7]).toEqual(':soccer: Brazil 1 x Switzerland 1')
 })

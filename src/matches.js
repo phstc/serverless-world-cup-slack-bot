@@ -65,14 +65,21 @@ const processInProgressEvents = (team, match, events) => {
       case 'goal':
         append(
           `:soccer: GOOOOAL!!!\n> ${event.player} (${event.time}) ${
-            match.home_team.country
+            team.country
+          }`
+        )
+        break
+      case 'goal-own':
+        append(
+          `:face_palm: OWN GOOOOAL!!!\n> ${event.player} (${event.time}) ${
+            team.country
           }`
         )
         break
       case 'goal-penalty':
         append(
           `:soccer: GOOOOAL penalty!!!\n> ${event.player} (${event.time}) ${
-            match.home_team.country
+            team.country
           }`
         )
         break
