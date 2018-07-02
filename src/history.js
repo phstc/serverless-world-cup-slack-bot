@@ -1,5 +1,6 @@
 const AWS = require('aws-sdk')
 const crypto = require('crypto')
+const { todayEST } = require('./time')
 
 let options = {}
 if (process.env.IS_LOCAL) {
@@ -19,7 +20,7 @@ const hash = msg => {
 }
 
 const todayHistory = async () => {
-  const today = new Date()
+  const today = todayEST()
   const todayKey = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`
   const result = await dynamodb
     .get({

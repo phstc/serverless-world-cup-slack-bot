@@ -1,4 +1,5 @@
 const { getMatches } = require('./api')
+const { localTime } = require('./time')
 
 const msgs = []
 
@@ -7,7 +8,7 @@ const append = msg => {
 }
 
 const processFutureMatch = match => {
-  const startAt = Date.parse(match.datetime)
+  const startAt = localTime(match.datetime)
   const now = new Date()
   const diff = Math.floor((startAt - now) / (1000 * 60))
 
@@ -18,13 +19,10 @@ const processFutureMatch = match => {
       } is about to start!`
     )
   } else {
-    const time = new Date(Date.parse(match.datetime))
     append(
       `:timer_clock: ${match.home_team_country} / ${
         match.away_team_country
-      } is playing today ${time.toLocaleString('en-US', {
-        timeZone: 'America/New_York'
-      })}`
+      } is playing today ${startAt}`
     )
   }
 }
