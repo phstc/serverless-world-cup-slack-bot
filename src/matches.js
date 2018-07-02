@@ -9,7 +9,7 @@ const append = msg => {
 
 const processFutureMatch = match => {
   const startAt = localTime(match.datetime)
-  const now = new Date()
+  const now = localTime(new Date().toISOString())
   const diff = Math.floor((startAt - now) / (1000 * 60))
 
   if (diff < 2) {
