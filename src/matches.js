@@ -12,17 +12,11 @@ const processFutureMatch = match => {
   const now = new Date()
   const diff = Math.floor((startAt - now) / (1000 * 60))
 
-  if (diff < 3) {
+  if (diff < 2) {
     append(
       `:timer_clock: The match between ${match.home_team_country} and ${
         match.away_team_country
       } is about to start!`
-    )
-  } else {
-    append(
-      `:timer_clock: ${match.home_team_country} / ${
-        match.away_team_country
-      } is playing today ${startAt}`
     )
   }
 }
